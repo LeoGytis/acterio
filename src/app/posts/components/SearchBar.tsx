@@ -16,7 +16,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
 		<nav className="sticky top-0 left-0 z-50 w-full h-16 bg-main shadow-lg">
 			<div className="mx-auto max-w-screen-xl h-full flex justify-between items-center text-xs px-10">
 				<Image src="/images/logo.svg" width={100} height={100} alt="logo" className="w-36 h-20" />
-				<div>
+				<div className="blur-animation">
 					<input
 						type="text"
 						value={searchWord}
