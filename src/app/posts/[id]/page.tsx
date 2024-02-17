@@ -3,6 +3,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import CardWrapper from "../components/CardWrapper";
 import { PostProps } from "../page";
+import SearchBar from "../components/SearchBar";
 
 export default function PostPage({ params }: { params: { id: string } }) {
 	const [post, setPost] = useState<PostProps | null>(null);
@@ -52,17 +53,20 @@ export default function PostPage({ params }: { params: { id: string } }) {
 		);
 
 	return (
-		<main className="h-screen w-1/2 lg:w-1/4 flex items-center justify-center">
-			<CardWrapper
-				key={post.id}
-				id={post.id}
-				title={post.title}
-				body={post.body}
-				userId={post.userId}
-				reactions={post.reactions}
-				tags={post.tags}
-				onReactionClick={handleReactionClick}
-			/>
-		</main>
+		<>
+			<SearchBar />
+			<main className="h-screen w-1/2 lg:w-1/4 flex justify-center pt-10">
+				<CardWrapper
+					key={post.id}
+					id={post.id}
+					title={post.title}
+					body={post.body}
+					userId={post.userId}
+					reactions={post.reactions}
+					tags={post.tags}
+					onReactionClick={handleReactionClick}
+				/>
+			</main>
+		</>
 	);
 }
