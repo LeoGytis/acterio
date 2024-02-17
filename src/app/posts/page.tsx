@@ -30,7 +30,7 @@ export default function Posts() {
 				const response = await axios.get<PostDataProps>("https://dummyjson.com/posts");
 				setPostsData(response.data);
 			} catch (error) {
-				console.error("Error fetching data:", error);
+				setMessage(`Error fetching data: ${error}`);
 			}
 		};
 
