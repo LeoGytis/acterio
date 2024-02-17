@@ -22,6 +22,7 @@ export interface PostDataProps {
 
 export default function Posts() {
 	const [postsData, setPostsData] = useState<PostDataProps | null>(null);
+	const [message, setMessage] = useState("");
 
 	useEffect(() => {
 		const fetchData = async () => {
@@ -40,8 +41,13 @@ export default function Posts() {
 		try {
 			const response = await axios.get<PostDataProps>(`https://dummyjson.com/posts/search?q=${searchWord}`);
 			setPostsData(response.data);
+			if (response.data.posts.length === 0) {
+				setMessage("No posts found.");
+			} else {
+				setMessage(`Found ${response.data.posts.length} post${response.data.posts.length !== 1 ? "s" : ""}.`);
+			}
 		} catch (error) {
-			console.error("Error searching posts:", error);
+			setMessage(`Error searching posts: ${error}`);
 		}
 	};
 
@@ -58,7 +64,12 @@ export default function Posts() {
 
 	return (
 		<>
-			<SearchBar onSearch={searchPosts} />
+			<SearchBar
+				onSearch={(searchWord: string) => {
+					searchPosts(searchWord);
+				}}
+				searchPostMessage={message}
+			/>
 			<main className="min-h-screen max-w-screen-xl grid grid-cols-1 lg:grid-cols-3 gap-8 justify-center p-8">
 				{postsData?.posts.map((item) => (
 					<CardWrapper
