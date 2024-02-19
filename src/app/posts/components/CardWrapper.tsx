@@ -33,7 +33,7 @@ const CardWrapper: React.FC<CardWrapperProps> = ({
 		}
 	};
 	return (
-		<div className="xl:max-h-[540px] flex flex-col justify-between bg-card_color hover:bg-hover shadow-lg rounded-2xl p-6">
+		<div className="max-h-[640px] min-h-min flex flex-col justify-between bg-card_color hover:bg-hover shadow-lg rounded-2xl p-6">
 			<div>
 				<Link href={`/posts/${id}`}>
 					<div className="font-bold text-xl mb-6 text-secondary hover:underline">{title}</div>

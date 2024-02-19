@@ -15,7 +15,6 @@ export default function PostPage({ params }: { params: { id: string } }) {
 			try {
 				const response = await axios.get<PostProps>(`https://dummyjson.com/posts/${params.id}`);
 				setPost(response.data);
-				setMessage("LABA DIENA");
 			} catch (error: any) {
 				setError(error);
 				console.error("Error fetching data:", error);
@@ -59,7 +58,7 @@ export default function PostPage({ params }: { params: { id: string } }) {
 	return (
 		<>
 			<SearchBar searchPostMessage={message} />
-			<main className="h-screen w-1/2 lg:w-1/4 flex justify-center pt-10">
+			<main className="h-screen w-full md:w-1/2 lg:w-1/4 flex justify-center pt-10 px-4">
 				<CardWrapper
 					key={post.id}
 					id={post.id}
