@@ -8,15 +8,18 @@ import SearchBar from "../components/SearchBar";
 export default function PostPage({ params }: { params: { id: string } }) {
 	const [post, setPost] = useState<PostProps | null>(null);
 	const [error, setError] = useState<Error | null>(null);
+	const [message, setMessage] = useState("");
 
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
 				const response = await axios.get<PostProps>(`https://dummyjson.com/posts/${params.id}`);
 				setPost(response.data);
+				setMessage("LABA DIENA");
 			} catch (error: any) {
 				setError(error);
 				console.error("Error fetching data:", error);
+				setMessage("Error fetching data.");
 			}
 		};
 
@@ -31,6 +34,7 @@ export default function PostPage({ params }: { params: { id: string } }) {
 				reactions: updatedReactions,
 			});
 			setPost(response.data);
+			setMessage("You've reacted to this post!");
 		} catch (error: any) {
 			console.error("Error updating reactions:", error);
 		}
@@ -54,7 +58,7 @@ export default function PostPage({ params }: { params: { id: string } }) {
 
 	return (
 		<>
-			<SearchBar />
+			<SearchBar searchPostMessage={message} />
 			<main className="h-screen w-1/2 lg:w-1/4 flex justify-center pt-10">
 				<CardWrapper
 					key={post.id}
