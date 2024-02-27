@@ -82,7 +82,7 @@ jobs:
               with:
                   path: ./out
 
-    # Deployment job
+    # Deployment job go
     deploy:
         environment:
             name: github-pages
