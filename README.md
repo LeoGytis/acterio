@@ -1,7 +1,8 @@
 ## Introduction
-Acterio Homework is projec. It includes API fetching, editing and deleting from DummyJSON.
+Acterio project is about API fetching, editing and deleting from DummyJSON.
 Have used Nex.js framework for dynamic routing.
-Tailwind helped me effortlessly to style pages and its components.
+TypeScript helped me ensure that I'm passing the correct type of props to React components.
+Tailwind empowered me effortlessly style pages and its components.
 
 ## Getting Started
 
