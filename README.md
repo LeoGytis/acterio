@@ -4,8 +4,14 @@ Have used Nex.js framework for dynamic routing.
 TypeScript helped me ensure that I'm passing the correct type of props to React components.
 Tailwind empowered me effortlessly style pages and its components.
 
-## Getting Started
+## Technologies Used
+React
+TypeScript
+Styled-Components
+React-Icons
+React-Scroll
 
+## Getting Started
 First, run the development server:
 
 ```bash
