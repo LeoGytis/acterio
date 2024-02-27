@@ -5,11 +5,12 @@ TypeScript helped me ensure that I'm passing the correct type of props to React 
 Tailwind empowered me effortlessly style pages and its components.
 
 ## Technologies Used
-React
-TypeScript
-Styled-Components
-React-Icons
-React-Scroll
+- React 
+- TypeScript 
+- Styled-Components 
+- React-Icons 
+- React-Scroll
+
 
 ## Getting Started
 First, run the development server:
