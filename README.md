@@ -1,5 +1,5 @@
 ## Introduction
-Acterio project is about API fetching, editing and deleting from DummyJSON.
+In the Acterio project, fetching data from the DummyJSON API involves sending requests to retrieve relevant information for processing. Error handling mechanisms are implemented to gracefully manage instances where the API may be unavailable or return unexpected responses.
 Have used Nex.js framework for dynamic routing.
 TypeScript helped me ensure that I'm passing the correct type of props to React components.
 Tailwind empowered me effortlessly style pages and its components.
