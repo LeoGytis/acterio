@@ -79,10 +79,9 @@ jobs:
             #   run: ${{ steps.detect-package-manager.outputs.runner }} next export
             - name: Upload artifact
               uses: actions/upload-pages-artifact@v3
+              if-no-files-found: warn
               with:
-                     name: react-bundle
-          path: react/react-bundle # ./react-bundle, ./react-bundle/*, react-bundle do not work
-          if-no-files-found: error
+                  path: ./out
 
     # Deployment job go
     deploy:
